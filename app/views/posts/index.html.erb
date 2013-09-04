@@ -1,0 +1,44 @@
+<!-- LOGO -->
+
+<h1 class="logo">STEM News</h1>
+</br>
+
+<!-- NAVIGATION -->
+
+<ul class="nav nav-pills">
+  <li class="active"><a href="#">Home</a></li>
+  <li><a href="#">Categories</a></li>
+  <li><a href="#">About</a></li>
+</ul>
+
+<!-- ARTICLES -->
+
+<% i = 0 %>
+<% @posts.each do |post| %>
+  <% i += 1 %>
+<% end %>
+<% @posts.each do |post| %>
+<div class="post-<%= i %>">
+  <p><strong><%= post.title %></strong></p>
+  <p>By: <%= post.author %> [<em><%= post.category %></em>]</p>
+  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
+  <p><%= post.summary %></p>
+  <p><%= post.article %></p>
+  <%= link_to 'Show', post %>
+  <%= link_to 'Edit', edit_post_path(post) %>
+  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </br>
+  </br>
+  </br>
+</div>
+<% i -= 1 %>
+<% end %>
+
+</br>
+
+<%= link_to 'New Post', new_post_path %>
+
+</br>
+</br>
+</br>
+</br>

@@ -1,0 +1,40 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// =================================
+// IMAGE THUMBNAILS
+// ================================= 
+   
+.thumbnail {
+    width: 200px;
+}
+
+// =================================
+// PAGE LAYOUT
+// ================================= 
+
+.nav {
+    margin-top: -40px;
+    margin-left: -20px;
+    margin-bottom: 30px;
+}
+
+.nav-pills li {
+    margin-right: 2px;
+}
+
+.yield {
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+// =================================
+// PAGE STYLE
+// ================================= 
+
+.logo {
+    margin-top: -20px;
+    margin-left: -20px;
+    display: none;
+}
