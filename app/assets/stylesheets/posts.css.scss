@@ -18,6 +18,7 @@
     margin-top: -40px;
     margin-left: -20px;
     margin-bottom: 30px;
+    display: none;
 }
 
 .nav-pills li {
@@ -25,7 +26,7 @@
 }
 
 .yield {
-    margin-top: 40px;
+    margin-top: 0px;
     margin-left: 40px;
 }
 
@@ -36,5 +37,13 @@
 .logo {
     margin-top: -20px;
     margin-left: -20px;
+    display: none;
+}
+
+// =================================
+// FEATURED ARTICLES
+// ================================= 
+
+.post-options {
     display: none;
 }
