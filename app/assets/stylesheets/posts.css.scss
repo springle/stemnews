@@ -31,6 +31,25 @@
 // PAGE STYLE
 // ================================= 
 
+.navbar-option-2 {
+	margin-right: 15px;
+}
+
+.navbar-options {
+	margin-top: 8.3px;
+	color: white;
+}
+
+.navbar-options a:visited {
+	color: white;
+}
+
+.navbar-options a:hover {
+	text-decoration: none;
+	background: none;
+	color: white;
+}
+
 .post-options a, .post-options a:visited {
     text-decoration: none;
     color: #428bca;
@@ -38,7 +57,6 @@
 
 .post-options a:hover {
     text-decoration: none;
-    background: none;
     color: #428bca;
 }
 
