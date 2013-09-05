@@ -14,36 +14,43 @@
 // PAGE LAYOUT
 // ================================= 
 
-.nav {
-    margin-top: -40px;
-    margin-left: -20px;
-    margin-bottom: 30px;
-    display: none;
-}
-
-.nav-pills li {
-    margin-right: 2px;
-}
-
 .yield {
-    margin-top: 0px;
+    margin-top: 80px;
     margin-left: 40px;
+    margin-right: 40px;
+}
+
+.footer {
+	margin-left: -40px;
+	margin-right: -40px;
+	margin-bottom: -20px;
+	border-radius: 0;
 }
 
 // =================================
 // PAGE STYLE
 // ================================= 
 
-.logo {
-    margin-top: -20px;
-    margin-left: -20px;
-    display: none;
+.post-options a, .post-options a:visited {
+    text-decoration: none;
+    color: #428bca;
+}
+
+.post-options a:hover {
+    text-decoration: none;
+    background: none;
+    color: #428bca;
 }
 
 // =================================
 // FEATURED ARTICLES
-// ================================= 
+// =================================
 
-.post-options {
-    display: none;
+.post-1 .thumbnail {
+	width: 60%;
 }
+
+.post .thumbnail {
+    cursor: pointer;
+}
+
