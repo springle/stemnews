@@ -1,10 +1,26 @@
+<div class="main-body">
+<div class="main-background">
+
+<!-- NAVIGATION -->
+
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#">Home</a></li>
+  <li><a href="#">News</a></li>
+  <li><a href="#">Student Life</a></li>
+  <li><a href="#">Opinion</a></li>
+  <li><a href="#">Community</a></li>
+  <li><a href="#">Archives</a></li>
+</ul>
+</br>
+</br>
+</br>
 
 <!-- ARTICLES -->
 
 <% i = 0 %>
 <% @posts.reverse.each do |post| %>
 <% i += 1 %>
-<% if i >= 10 %>
+<% if i >= 9 %>
   <% i -= 1 %>
   <% break %>
 <% end %>
@@ -29,7 +45,7 @@
   </div>
 
 <% when 2 %>
-  <div class="col-md-3">
+  <div class="col-md-6">
 	<div class="post post-<%= i %>">
 	  <p><strong><%= post.title %></strong></p>
 	  <p>By: <%= post.author %></p>
@@ -43,10 +59,29 @@
 	  </br>
 	  </br>
 	</div>
+  </div>
   </div>
 
 <% when 3 %>
-  <div class="col-md-3">
+  <div class="row">
+  <div class="col-md-6">
+	<div class="post post-<%= i %>">
+	  <p><strong><%= post.title %></strong></p>
+	  <p>By: <%= post.author %></p>
+	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
+	  <p><%= post.summary %></p>
+	  <div class="post-options">
+		<%= link_to 'Show', post %>
+		<%= link_to 'Edit', edit_post_path(post) %>
+		<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+	  </div>
+	  </br>
+	  </br>
+	</div>
+  </div>
+
+<% when 4 %>
+  <div class="col-md-6">
 	<div class="post post-<%= i %>">
 	  <p><strong><%= post.title %></strong></p>
 	  <p>By: <%= post.author %></p>
@@ -63,28 +98,13 @@
   </div>
   </div>
 
-<% when 4 %>
-  <div class="row">
-  <div class="col-md-2">
-	<div class="post post-<%= i %>">
-	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
-	  <p><strong><%= post.title %></strong></p>
-	  <p><%= post.summary %></p>
-	  <div class="post-options">
-		<%= link_to 'Show', post %>
-		<%= link_to 'Edit', edit_post_path(post) %>
-		<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-	  </div>
-	  </br>
-	  </br>
-	</div>
-  </div>
-
 <% when 5 %>
-  <div class="col-md-2">
+  <div class="row">
+  <div class="col-md-6">
 	<div class="post post-<%= i %>">
-	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
 	  <p><strong><%= post.title %></strong></p>
+	  <p>By: <%= post.author %></p>
+	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
 	  <p><%= post.summary %></p>
 	  <div class="post-options">
 		<%= link_to 'Show', post %>
@@ -97,10 +117,11 @@
   </div>
 
 <% when 6 %>
-  <div class="col-md-2">
+  <div class="col-md-6">
 	<div class="post post-<%= i %>">
-	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
 	  <p><strong><%= post.title %></strong></p>
+	  <p>By: <%= post.author %></p>
+	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
 	  <p><%= post.summary %></p>
 	  <div class="post-options">
 		<%= link_to 'Show', post %>
@@ -111,12 +132,15 @@
 	  </br>
 	</div>
   </div>
+  </div>
 
 <% when 7 %>
-  <div class="col-md-2">
+  <div class="row">
+  <div class="col-md-6">
 	<div class="post post-<%= i %>">
-	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
 	  <p><strong><%= post.title %></strong></p>
+	  <p>By: <%= post.author %></p>
+	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
 	  <p><%= post.summary %></p>
 	  <div class="post-options">
 		<%= link_to 'Show', post %>
@@ -129,26 +153,11 @@
   </div>
 
 <% when 8 %>
-  <div class="col-md-2">
+  <div class="col-md-6">
 	<div class="post post-<%= i %>">
-	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
 	  <p><strong><%= post.title %></strong></p>
-	  <p><%= post.summary %></p>
-	  <div class="post-options">
-		<%= link_to 'Show', post %>
-		<%= link_to 'Edit', edit_post_path(post) %>
-		<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-	  </div>
-	  </br>
-	  </br>
-	</div>
-  </div>
-
-<% when 9 %>
-  <div class="col-md-2">
-	<div class="post post-<%= i %>">
+	  <p>By: <%= post.author %></p>
 	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
-	  <p><strong><%= post.title %></strong></p>
 	  <p><%= post.summary %></p>
 	  <div class="post-options">
 		<%= link_to 'Show', post %>
@@ -163,3 +172,9 @@
 
 <% end %>
 <% end %>
+
+
+</div>
+</div>
+
+<a href="/posts/new">Submit Post</a>

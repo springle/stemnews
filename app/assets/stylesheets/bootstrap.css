@@ -3187,7 +3187,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   max-width: none;
 }
 .nav-tabs {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #FAFAFA;
 }
 .nav-tabs > li {
   float: left;
@@ -3200,14 +3200,19 @@ textarea.input-group-sm > .input-group-btn > .btn {
   border-radius: 4px 4px 0 0;
 }
 .nav-tabs > li > a:hover {
-  border-color: #eeeeee #eeeeee #dddddd;
+  background-color: #FAFAFA;
+  color: black;
+}
+.nav-tabs > li > a:hover:visited {
+  background-color: #FAFAFA;
+  color: black;
 }
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
   color: #555555;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
+  background-color: #FAFAFA;
+  border: 1px solid #FAFAFA;
   border-bottom-color: transparent;
   cursor: default;
 }
@@ -3246,7 +3251,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
-  color: #ffffff;
+  color: #FAFAFA;
   background-color: #428bca;
 }
 .nav-stacked > li {
