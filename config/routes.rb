@@ -1,4 +1,5 @@
 Stemnews::Application.routes.draw do
+  get "edit/index"
   resources :posts
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -6,6 +7,9 @@ Stemnews::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'posts#index'
+  
+  # Configure Admin Page
+  get '/admin' => 'posts#admin'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

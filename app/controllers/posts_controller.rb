@@ -8,6 +8,10 @@ http_basic_authenticate_with :name => "stem", :password => "news", except: :inde
   def index
     @posts = Post.all
   end
+  
+  def admin
+    @post = Post.all
+  end
 
   # GET /posts/1
   # GET /posts/1.json
@@ -71,6 +75,6 @@ http_basic_authenticate_with :name => "stem", :password => "news", except: :inde
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :author, :category, :summary, :article, :sources, :image)
+        params.require(:post).permit(:title, :author, :category, :summary, :article, :sources, :image, :edited)
     end
 end

@@ -1,3 +1,7 @@
+<!-- HEADER -->
+
+<img class="header-image" src="assets/stemnewsheader.jpg"/>
+
 <div class="main-body">
 <div class="main-background">
 
@@ -17,12 +21,17 @@
 
 <!-- ARTICLES -->
 
+<div class="articles">
+
 <% i = 0 %>
 <% @posts.reverse.each do |post| %>
 <% i += 1 %>
-<% if i >= 9 %>
-  <% i -= 1 %>
+<% if i >= 7 %>
   <% break %>
+<% end %>
+<% if post.edited != 1 %>
+  <% i -= 1 %>
+  <% next %>
 <% end %>
 
 <% case i %>
@@ -35,9 +44,7 @@
 	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
 	  <p><%= post.summary %></p>
 	  <div class="post-options">
-		<%= link_to 'Show', post %>
-		<%= link_to 'Edit', edit_post_path(post) %>
-		<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+		<%= link_to 'Read More', post %>
 	  </div>
 	  </br>
 	  </br>
@@ -49,67 +56,49 @@
 	<div class="post post-<%= i %>">
 	  <p><strong><%= post.title %></strong></p>
 	  <p>By: <%= post.author %></p>
-	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
 	  <p><%= post.summary %></p>
 	  <div class="post-options">
-		<%= link_to 'Show', post %>
-		<%= link_to 'Edit', edit_post_path(post) %>
-		<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+		<%= link_to 'Read More', post %>
 	  </div>
-	  </br>
-	  </br>
-	</div>
-  </div>
+  </br>
+  </br>
   </div>
 
 <% when 3 %>
-  <div class="row">
-  <div class="col-md-6">
 	<div class="post post-<%= i %>">
 	  <p><strong><%= post.title %></strong></p>
 	  <p>By: <%= post.author %></p>
-	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
-	  <p><%= post.summary %></p>
+ 	  <p><%= post.summary %></p>
 	  <div class="post-options">
-		<%= link_to 'Show', post %>
-		<%= link_to 'Edit', edit_post_path(post) %>
-		<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+		<%= link_to 'Read More', post %>
 	  </div>
-	  </br>
-	  </br>
-	</div>
+  </br>
+  </br>
+  </div>
+  </div>
   </div>
 
 <% when 4 %>
-  <div class="col-md-6">
-	<div class="post post-<%= i %>">
-	  <p><strong><%= post.title %></strong></p>
-	  <p>By: <%= post.author %></p>
-	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
-	  <p><%= post.summary %></p>
-	  <div class="post-options">
-		<%= link_to 'Show', post %>
-		<%= link_to 'Edit', edit_post_path(post) %>
-		<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-	  </div>
-	  </br>
-	  </br>
-	</div>
-  </div>
-  </div>
-
-<% when 5 %>
   <div class="row">
   <div class="col-md-6">
 	<div class="post post-<%= i %>">
 	  <p><strong><%= post.title %></strong></p>
 	  <p>By: <%= post.author %></p>
-	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
 	  <p><%= post.summary %></p>
 	  <div class="post-options">
-		<%= link_to 'Show', post %>
-		<%= link_to 'Edit', edit_post_path(post) %>
-		<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+		<%= link_to 'Read More', post %>
+	  </div>
+	  </br>
+	  </br>
+	</div>
+
+<% when 5 %>
+	<div class="post post-<%= i %>">
+	  <p><strong><%= post.title %></strong></p>
+	  <p>By: <%= post.author %></p>
+	  <p><%= post.summary %></p>
+	  <div class="post-options">
+		<%= link_to 'Read More', post %>
 	  </div>
 	  </br>
 	  </br>
@@ -124,45 +113,7 @@
 	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
 	  <p><%= post.summary %></p>
 	  <div class="post-options">
-		<%= link_to 'Show', post %>
-		<%= link_to 'Edit', edit_post_path(post) %>
-		<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-	  </div>
-	  </br>
-	  </br>
-	</div>
-  </div>
-  </div>
-
-<% when 7 %>
-  <div class="row">
-  <div class="col-md-6">
-	<div class="post post-<%= i %>">
-	  <p><strong><%= post.title %></strong></p>
-	  <p>By: <%= post.author %></p>
-	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
-	  <p><%= post.summary %></p>
-	  <div class="post-options">
-		<%= link_to 'Show', post %>
-		<%= link_to 'Edit', edit_post_path(post) %>
-		<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-	  </div>
-	  </br>
-	  </br>
-	</div>
-  </div>
-
-<% when 8 %>
-  <div class="col-md-6">
-	<div class="post post-<%= i %>">
-	  <p><strong><%= post.title %></strong></p>
-	  <p>By: <%= post.author %></p>
-	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
-	  <p><%= post.summary %></p>
-	  <div class="post-options">
-		<%= link_to 'Show', post %>
-		<%= link_to 'Edit', edit_post_path(post) %>
-		<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+		<%= link_to 'Read More', post %>
 	  </div>
 	  </br>
 	  </br>
@@ -173,8 +124,10 @@
 <% end %>
 <% end %>
 
-
 </div>
 </div>
 
-<a href="/posts/new">Submit Post</a>
+<div class="post-options"><a href="/posts/new">Submit Post</a></div>
+<div class="post-options"><a href="/admin">Editor Sign-in</a></div>
+
+</div>

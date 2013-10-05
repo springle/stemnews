@@ -1,0 +1,68 @@
+<!-- HEADER -->
+
+<img class="header-image" src="assets/stemnewsheader.jpg"/>
+
+<div class="main-body">
+<div class="main-background">
+
+<!-- NAVIGATION -->
+
+<ul class="nav nav-tabs">
+<li><a href="<%= posts_url %>">Home</a></li>
+<li><a href="#">News</a></li>
+<li><a href="#">Student Life</a></li>
+<li><a href="#">Opinion</a></li>
+<li><a href="#">Community</a></li>
+<li><a href="#">Archives</a></li>
+</ul>
+</br>
+</br>
+</br>
+
+<div class="container">
+
+<div class="row">
+  <div class="admin-articles">
+  <div class="col-md-4">
+  		<h1>Editor's Guide</h1>
+  </div>
+  <div class="col-md-4">
+		<h1>Not Edited</h1><br><br>
+		<% i = 0 %>
+		<% @post.each do |post| %>
+			<%  if post.edited != 1 %>
+				<% i += 1 %>
+				<p><strong><%= post.title %></strong></p>
+				<p>By: <%= post.author%></p>
+				<p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
+				<p><%= post.summary%></p>
+				<%= link_to 'Edit', edit_post_path(post) %>
+				<%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+				<br><br><br><br>
+			<% end %>
+		<% end %>
+		<% if i == 0 %>
+			<p>All articles have been edited.</p>
+		<% end %>
+  </div>
+  <div class="col-md-4">
+  		<h1>Published</h1><br><br>
+		<% @post.reverse.each do |post| %>
+			<%  if post.edited == 1 %>
+				<p><strong><%= post.title %></strong></p>
+				<p>By: <%= post.author%></p>
+				<p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
+				<p><%= post.summary%></p>
+				<%= link_to 'Edit', edit_post_path(post) %>
+				<%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+				<br><br><br><br>
+			<% end %>
+		<% end %>
+  </div>
+  </div>
+  
+</div>
+</div>
+</div>
+</div>
+

@@ -19,6 +19,8 @@
     width: 200px;
 }
 
+
+
 // =================================
 // PAGE LAYOUT
 // ================================= 
@@ -32,9 +34,16 @@
 	padding: 20px;
 }
 
+.articles {
+	margin-top: -20px;
+}
+
+.admin-articles {
+	margin-top: -40px;
+}
+
 .yield {
     margin-top: 0px;
-    min-width: 1100px;
 }
 
 .footer {
@@ -42,6 +51,10 @@
 	margin-right: -40px;
 	margin-bottom: -20px;
 	border-radius: 0;
+}
+
+.form {
+	margin-top: 40px;
 }
 
 // =================================
@@ -73,35 +86,6 @@
 	color: #848484;
 }
 
-.navbar {
-	border-radius: 0px;
-	display: none;
-}
-
-.navbar .thumbnail {
-	height: 50px;
-	width: 50px;
-}
-
-.navbar-option-2 {
-	margin-right: 15px;
-}
-
-.navbar-options {
-	margin-top: 8.3px;
-	color: white;
-}
-
-.navbar-options a:visited {
-	color: white;
-}
-
-.navbar-options a:hover {
-	text-decoration: none;
-	background: none;
-	color: white;
-}
-
 .post-options a, .post-options a:visited {
     text-decoration: none;
     color: #428bca;
@@ -113,14 +97,38 @@
 }
 
 // =================================
+// FORUMS
+// ================================= 
+
+.field #post_summary {
+	width: 90%;
+	height: 100px;
+}
+
+.field #post_article {
+	width: 90%;
+	height: 500px;
+}
+
+.field #post_sources {
+	width: 90%;
+	height: 100px;
+}
+
+.edit-thumbnail {
+	width: 40%;
+}
+
+// =================================
 // FEATURED ARTICLES
 // =================================
 
-.post-1 .thumbnail {
+.post .thumbnail {
 	width: 60%;
 }
 
 .post .thumbnail {
     cursor: pointer;
 }
+
 
