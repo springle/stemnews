@@ -19,115 +19,72 @@
 </br>
 </br>
 
-<!-- ARTICLES -->
+<!-- PRIMARY ARTICLES -->
 
 <div class="articles">
 
-<% i = 0 %>
 <% @posts.reverse.each do |post| %>
-<% i += 1 %>
-<% if i >= 7 %>
-  <% break %>
-<% end %>
+
 <% if post.edited != 1 %>
+	<% next %>
+<% end %>
+
+<div class="row">
+	<div class="col-md-4">
+		<div class="post post-1">
+			<p><strong><%= post.title %></strong></p>
+			<p>By: <%= post.author %></p>
+			<p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
+			<p><%= post.summary %></p>
+			<div class="post-options">
+			  <%= link_to 'Read More', post %>
+			</div>
+	</div></br></br>
+	</div>
+	
+<% break %>
+<% end %>
+
+<!-- NEWS CATEGORY -->
+<div class="col-md-4">
+<p><strong> News </strong></p>
+
+<% i = 0 %>
+
+<% @posts.reverse.each do |post| %>
+
+<% i += 1 %>
+
+<% if i ==1 %>
+  <% next %>
+<% end %>
+
+<% if post.edited != 1 || post.category != "News" %>
   <% i -= 1 %>
   <% next %>
 <% end %>
 
-<% case i %>
-<% when 1 %>
-  <div class="row">
-  <div class="col-md-6">
-	<div class="post post-<%= i %>">
-	  <p><strong><%= post.title %></strong></p>
-	  <p>By: <%= post.author %></p>
+	<div class="post post-news">
 	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
+	  <p><strong><%= post.title %></strong></p>
+	  <p>By: <%= post.author %></p>
 	  <p><%= post.summary %></p>
 	  <div class="post-options">
 		<%= link_to 'Read More', post %>
 	  </div>
-	  </br>
-	  </br>
+	</br>
+	</br>
 	</div>
-  </div>
-
-<% when 2 %>
-  <div class="col-md-6">
-	<div class="post post-<%= i %>">
-	  <p><strong><%= post.title %></strong></p>
-	  <p>By: <%= post.author %></p>
-	  <p><%= post.summary %></p>
-	  <div class="post-options">
-		<%= link_to 'Read More', post %>
-	  </div>
-  </br>
-  </br>
-  </div>
-
-<% when 3 %>
-	<div class="post post-<%= i %>">
-	  <p><strong><%= post.title %></strong></p>
-	  <p>By: <%= post.author %></p>
- 	  <p><%= post.summary %></p>
-	  <div class="post-options">
-		<%= link_to 'Read More', post %>
-	  </div>
-  </br>
-  </br>
-  </div>
-  </div>
-  </div>
-
-<% when 4 %>
-  <div class="row">
-  <div class="col-md-6">
-	<div class="post post-<%= i %>">
-	  <p><strong><%= post.title %></strong></p>
-	  <p>By: <%= post.author %></p>
-	  <p><%= post.summary %></p>
-	  <div class="post-options">
-		<%= link_to 'Read More', post %>
-	  </div>
-	  </br>
-	  </br>
-	</div>
-
-<% when 5 %>
-	<div class="post post-<%= i %>">
-	  <p><strong><%= post.title %></strong></p>
-	  <p>By: <%= post.author %></p>
-	  <p><%= post.summary %></p>
-	  <div class="post-options">
-		<%= link_to 'Read More', post %>
-	  </div>
-	  </br>
-	  </br>
-	</div>
-  </div>
-
-<% when 6 %>
-  <div class="col-md-6">
-	<div class="post post-<%= i %>">
-	  <p><strong><%= post.title %></strong></p>
-	  <p>By: <%= post.author %></p>
-	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
-	  <p><%= post.summary %></p>
-	  <div class="post-options">
-		<%= link_to 'Read More', post %>
-	  </div>
-	  </br>
-	  </br>
-	</div>
-  </div>
-  </div>
 
 <% end %>
-<% end %>
 
-</div>
-</div>
+
+
 
 <div class="post-options"><a href="/posts/new">Submit Post</a></div>
 <div class="post-options"><a href="/admin">Editor Sign-in</a></div>
+
+</div>
+</div>
 
 </div>

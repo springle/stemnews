@@ -48,7 +48,7 @@ http_basic_authenticate_with :name => "stem", :password => "news", except: :inde
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to admin_url, notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -62,7 +62,7 @@ http_basic_authenticate_with :name => "stem", :password => "news", except: :inde
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url }
+      format.html { redirect_to admin_url }
       format.json { head :no_content }
     end
   end

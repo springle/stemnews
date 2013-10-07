@@ -46,17 +46,6 @@
     margin-top: 0px;
 }
 
-.footer {
-	margin-left: -40px;
-	margin-right: -40px;
-	margin-bottom: -20px;
-	border-radius: 0;
-}
-
-.form {
-	margin-top: 40px;
-}
-
 // =================================
 // PAGE STYLE
 // ================================= 
@@ -100,6 +89,10 @@
 // FORUMS
 // ================================= 
 
+.form {
+	margin-top: 40px;
+}
+
 .field #post_summary {
 	width: 90%;
 	height: 100px;
@@ -124,7 +117,12 @@
 // =================================
 
 .post .thumbnail {
-	width: 60%;
+	width: 90%;
+}
+
+.post-news .thumbnail {
+	width: 40%;
+	display: inline-block;
 }
 
 .post .thumbnail {
