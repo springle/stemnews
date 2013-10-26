@@ -1,39 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<div class="show container">
+	<h1 class="show-title"><%= @post.title %></h1><br>
+	
+	
+	<img class="show-thumbnail" src="<%= @post.image %>" align="left"/>
+	
+	<div class="show-article">
+		<p>[<%= @post.category.upcase %>] <%= @post.summary %></p>
+		<p><%= @post.article %></p>
+	</div>
+	
+	<p><strong>By:</strong> <%= @post.author %></p>
+	<p><strong>Sources:</strong> <%= @post.sources %></p>
 
-<p>
-  <strong>Author:</strong>
-  <%= @post.author %>
-</p>
+	<%= link_to 'Edit', edit_post_path(@post) %> |
+	<%= link_to 'Back', posts_path %>
+</div>
 
-<p>
-  <strong>Category:</strong>
-  <%= @post.category %>
-</p>
-
-<p>
-  <strong>Summary:</strong>
-  <%= @post.summary %>
-</p>
-
-<p>
-  <strong>Article:</strong>
-  <%= @post.article %>
-</p>
-
-<p>
-  <strong>Sources:</strong>
-  <%= @post.sources %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @post.image %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<br>

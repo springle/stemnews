@@ -1,0 +1,60 @@
+<!-- HEADER -->
+
+<img class="header-image hidden-xs hidden-sm" src="assets/stemnewsheader.jpg"/>
+
+
+
+<div class="main-body">
+<div class="main-background">
+
+<!-- NAVIGATION -->
+
+<ul class="nav nav-tabs hidden-xs hidden-sm">
+  <li><a href="<%= posts_path %>">Home</a></li>
+  <li class="active"><a href="/news">News</a></li>
+  <li><a href="/studentlife">Student Life</a></li>
+  <li><a href="/opinion">Opinion</a></li>
+  <li><a href="/community">Community</a></li>
+  <li><a href="/archives">Archives</a></li>
+</ul>
+</br>
+</br>
+</br>
+
+<!-- NEWS CATEGORY -->
+<div class="col-md-4">
+<p><strong> News </strong></p>
+
+<% i = 0 %>
+
+<% @posts.reverse.each do |post| %>
+
+<% i += 1 %>
+
+<% if post.edited != 1 || post.category != "News" %>
+  <% i -= 1 %>
+  <% next %>
+<% end %>
+
+<% if i ==1 %>
+  <% next %>
+<% end %>
+
+<% if i > 3 %>
+  <% break %>
+<% end %>
+
+	<div class="post post-news">
+	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
+	  <p><strong><%= post.title %></strong></p>
+	  <p>By: <%= post.author %></p>
+	  <p><%= post.summary %></p>
+	  <div class="post-options">
+		<%= link_to 'Read More', post %>
+	  </div>
+	</br>
+	</br>
+	</div>
+
+<% end %>
+</div>

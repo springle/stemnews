@@ -1,15 +1,17 @@
 <!-- HEADER -->
 
-<img class="header-image" src="assets/stemnewsheader.jpg"/>
+<img class="header-image hidden-xs hidden-sm" src="assets/stemnewsheader.jpg"/>
+
+
 
 <div class="main-body">
 <div class="main-background">
 
 <!-- NAVIGATION -->
 
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs hidden-xs hidden-sm">
   <li class="active"><a href="#">Home</a></li>
-  <li><a href="#">News</a></li>
+  <li><a href="/news">News</a></li>
   <li><a href="#">Student Life</a></li>
   <li><a href="#">Opinion</a></li>
   <li><a href="#">Community</a></li>
@@ -19,7 +21,7 @@
 </br>
 </br>
 
-<!-- PRIMARY ARTICLES -->
+<!-- PRIMARY ARTICLE -->
 
 <div class="articles">
 
@@ -31,10 +33,11 @@
 
 <div class="row">
 	<div class="col-md-4">
+	<p><strong> Top Story </strong></p>
 		<div class="post post-1">
-			<p><strong><%= post.title %></strong></p>
+			<p><a class="thumbnail hidden-xs hidden-sm"><%= image_tag post.image_url.to_s %></a></p>
+			<h2><strong><%= post.title %></strong></h2>
 			<p>By: <%= post.author %></p>
-			<p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
 			<p><%= post.summary %></p>
 			<div class="post-options">
 			  <%= link_to 'Read More', post %>
@@ -55,17 +58,17 @@
 
 <% i += 1 %>
 
+<% if post.edited != 1 || post.category != "News" %>
+  <% i -= 1 %>
+  <% next %>
+<% end %>
+
 <% if i ==1 %>
   <% next %>
 <% end %>
 
 <% if i > 3 %>
   <% break %>
-<% end %>
-
-<% if post.edited != 1 || post.category != "News" %>
-  <% i -= 1 %>
-  <% next %>
 <% end %>
 
 	<div class="post post-news">
@@ -107,7 +110,7 @@
   <% next %>
 <% end %>
 
-	<div class="post post-news">
+	<div class="post post-studentlife">
 	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
 	  <p><strong><%= post.title %></strong></p>
 	  <p>By: <%= post.author %></p>
@@ -148,7 +151,7 @@
   <% next %>
 <% end %>
 
-	<div class="post post-news">
+	<div class="post post-opinion">
 	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
 	  <p><strong><%= post.title %></strong></p>
 	  <p>By: <%= post.author %></p>
@@ -186,7 +189,7 @@
   <% next %>
 <% end %>
 
-	<div class="post post-news">
+	<div class="post post-community">
 	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
 	  <p><strong><%= post.title %></strong></p>
 	  <p>By: <%= post.author %></p>
@@ -224,7 +227,7 @@
   <% next %>
 <% end %>
 
-	<div class="post post-news">
+	<div class="post post-archives">
 	  <p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
 	  <p><strong><%= post.title %></strong></p>
 	  <p>By: <%= post.author %></p>

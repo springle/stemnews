@@ -10,6 +10,11 @@ Stemnews::Application.routes.draw do
   
   # Configure Admin Page
   get '/admin' => 'posts#admin'
+  get '/news' => 'posts#news'
+  get '/studentlife' => 'posts#studentlife'
+  get '/opinion' => 'posts#opinion'
+  get '/community' => 'posts#community'
+  get '/archives' => 'posts#archives'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

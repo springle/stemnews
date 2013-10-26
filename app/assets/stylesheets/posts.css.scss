@@ -115,12 +115,12 @@
 // =================================
 
 .post .thumbnail {
-	width: 90%;
-}
-
-.post-news .thumbnail {
 	width: 40%;
 	display: inline-block;
+}
+
+.post-1 .thumbnail {
+	width: 90%;
 }
 
 .post .thumbnail {
@@ -128,7 +128,35 @@
 }
 
 // =================================
+// SHOW ARTICLES VIEW
+// =================================
+
+.show-title {
+	text-align: center;
+}
+
+.show-thumbnail {
+	width: 50%;
+	padding-right: 20px;
+	padding-top: 5px;
+}
+
+// =================================
 // SNAP HEADER
 // =================================
 
+.navbar {
+	width: 100%;
+}
 
+.affix {
+	position: fixed;
+}
+
+.affix-top {
+	position: relative;
+}
+
+.affix-bottom {
+	position: absolute;
+}

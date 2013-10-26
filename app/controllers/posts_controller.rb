@@ -12,6 +12,26 @@ http_basic_authenticate_with :name => "stem", :password => "news", except: :inde
   def admin
     @post = Post.all
   end
+  
+  def news
+    @post = Post.all
+  end
+  
+  def studentlife
+      @post = Post.all
+  end
+  
+  def opinion
+      @post = Post.all
+  end
+  
+  def community
+      @post = Post.all
+  end
+  
+  def archives
+      @post = Post.all
+  end
 
   # GET /posts/1
   # GET /posts/1.json

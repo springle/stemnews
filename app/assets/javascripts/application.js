@@ -16,3 +16,11 @@
 //= require_tree .
 
 // SNAP TO TOP
+  $('#myAffix').affix({
+    offset: {
+      top: 100
+    , bottom: function () {
+        return (this.bottom = $('.bs-footer').outerHeight(true))
+      }
+    }
+  })
