@@ -3,16 +3,23 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // =================================
+// CSS TRANSITIONS
+// ================================= 
+
+.post .thumbnail {
+	transition-duration: .5s;
+}
+
+.post .thumbnail:hover {
+	width: 70%;
+}
+
+// =================================
 // IMAGES
 // ================================= 
   
 .header-image {
 	width: 100%;
-	margin-top: 0px;
-	margin-bottom: 50px;
-	position: fixed;
-	z-index: -10;
-	min-width: 1100px;
 }
    
 .thumbnail {
@@ -23,54 +30,72 @@
 // PAGE LAYOUT
 // ================================= 
 
-.main-body {
-	padding-top: 19.3%;
-}
-
 .main-background {
 	background-color: #FAFAFA;
 	padding: 20px;
+	padding-top: 40px;
 }
 
 .articles {
-	margin-top: -20px;
+	margin-top: -10px;
 }
 
 .admin-articles {
 	margin-top: -40px;
 }
 
-.yield {
-    margin-top: 0px;
+.header-image {
+	margin-top: 50px;
+}
+
+.post-small {
+	margin-bottom: 30px;
+}
+
+.media-fix {
+	width: 100%;
+	height: 50px;
 }
 
 // =================================
 // PAGE STYLE
 // ================================= 
 
-.nav-tabs {
-	margin-top: -59px;
-}
-
-.nav-tabs li a:visited {
+.post-main {
+	background-color: #101010;
+	padding: 15px;
+	border-radius: 5px;
 	color: white;
 }
 
-.nav-tabs li {
-	color: white;
+.post-news {
+	margin-bottom: 10px;
+	padding: 10px;
+	border: 2px solid blue;
 }
 
-.nav-tabs .active a:hover {
-	color: black;
-	cursor: pointer;
+.post-studentlife {
+	margin-bottom: 10px;
+	padding: 10px;
+	border: 2px solid red;
 }
 
-.nav-tabs .active a:visited {
-	color: black;
+.post-opinion {
+	margin-bottom: 10px;
+	padding: 10px;
+	border: 2px solid lightgreen;
 }
 
-.nav-tabs .active {
-	color: #848484;
+.post-community {
+	margin-bottom: 10px;
+	padding: 10px;
+	border: 2px solid orange;
+}
+
+.post-archives {
+	margin-bottom: 10px;
+	padding: 10px;
+	border: 2px solid purple;
 }
 
 .post-options a, .post-options a:visited {
@@ -88,7 +113,7 @@
 // ================================= 
 
 .form {
-	margin-top: 40px;
+	margin-top: 90px;
 }
 
 .field #post_summary {
@@ -119,8 +144,9 @@
 	display: inline-block;
 }
 
-.post-1 .thumbnail {
-	width: 90%;
+.post-main .thumbnail {
+	width: 100%;
+	cursor: pointer;
 }
 
 .post .thumbnail {
@@ -139,24 +165,4 @@
 	width: 50%;
 	padding-right: 20px;
 	padding-top: 5px;
-}
-
-// =================================
-// SNAP HEADER
-// =================================
-
-.navbar {
-	width: 100%;
-}
-
-.affix {
-	position: fixed;
-}
-
-.affix-top {
-	position: relative;
-}
-
-.affix-bottom {
-	position: absolute;
 }

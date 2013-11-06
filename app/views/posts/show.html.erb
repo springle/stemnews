@@ -7,8 +7,8 @@
 	<img class="show-thumbnail" src="<%= @post.image %>" align="left"/>
 	
 	<div class="show-article">
-		<p>[<%= @post.category.upcase %>] <%= @post.summary %></p>
-		<p><%= @post.article %></p>
+		<pre><%= @post.summary %><br>
+		     <%= @post.article %></pre>
 	</div>
 	
 	<p><strong>By:</strong> <%= @post.author %></p>
