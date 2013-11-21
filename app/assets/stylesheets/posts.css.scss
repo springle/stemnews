@@ -17,10 +17,6 @@
 // =================================
 // IMAGES
 // ================================= 
-  
-.header-image {
-	width: 100%;
-}
    
 .thumbnail {
     width: 200px;
@@ -30,12 +26,6 @@
 // PAGE LAYOUT
 // ================================= 
 
-.main-background {
-	background-color: #FAFAFA;
-	padding: 20px;
-	padding-top: 40px;
-}
-
 .articles {
 	margin-top: -10px;
 }
@@ -44,58 +34,59 @@
 	margin-top: -40px;
 }
 
-.header-image {
-	margin-top: 50px;
-}
-
 .post-small {
 	margin-bottom: 30px;
 }
 
-.media-fix {
-	width: 100%;
-	height: 50px;
+.container {
+	margin-top: 50px;
 }
 
 // =================================
 // PAGE STYLE
 // ================================= 
 
+.post:hover {
+	transition-duration: 1s;
+}
+
 .post-main {
-	background-color: #101010;
 	padding: 15px;
 	border-radius: 5px;
+	box-shadow: 5px 5px 5px #888888;
+	background-color: #222222;
 	color: white;
+	cursor: pointer;
 }
 
 .post-news {
 	margin-bottom: 10px;
 	padding: 10px;
-	border: 2px solid blue;
+	border-left: 2px solid blue;
 }
 
 .post-studentlife {
 	margin-bottom: 10px;
 	padding: 10px;
-	border: 2px solid red;
+	border-left: 2px solid red;
 }
 
 .post-opinion {
 	margin-bottom: 10px;
 	padding: 10px;
-	border: 2px solid lightgreen;
+	border-left: 2px solid lightgreen;
 }
 
 .post-community {
 	margin-bottom: 10px;
 	padding: 10px;
-	border: 2px solid orange;
+	border-left: 2px solid orange;
 }
 
 .post-archives {
 	margin-bottom: 10px;
 	padding: 10px;
-	border: 2px solid purple;
+	border-left: 2px solid purple;
 }
 
 .post-options a, .post-options a:visited {
@@ -104,8 +95,153 @@
 }
 
 .post-options a:hover {
-    text-decoration: none;
-    color: #428bca;
+	color: white;
+	transition-duration: .5s;
+}
+
+.content-wrapper {
+	padding: 20px;
+	padding-top: 30px;
+	padding-bottom: 15px;
+	border-radius: 10px;
+	background-color: white;
+}
+
+.main-background {
+	background-color: lightgrey;
+	padding: 20px;
+	padding-top: 40px;
+}
+
+.category-news, .category-studentlife, .category-opinion, .category-community, .category-archives {
+	padding: 5px;
+	margin-left: -5px;
+}
+
+.category-news strong, .category-studentlife strong, .category-opinion strong, .category-community strong, .category-archives strong {
+	text-decoration: none;
+	color: black;
+}
+
+.category-news:hover, .category-studentlife:hover, .category-opinion:hover, .category-community:hover, .category-archives:hover {
+	text-decoration: none;
+	transition-duration: .5s;
+	border-radius: 4px;
+}
+
+.category-news:hover strong, .category-studentlife:hover strong, .category-opinion:hover strong, .category-community:hover strong, .category-archives:hover strong {
+	transition-duration: .5s;
+	color:white;
+}
+
+.category-news:hover {
+	background-color: blue;
+}
+
+.category-studentlife:hover {
+	background-color: red;
+}
+
+.category-opinion:hover {
+	background-color: lightgreen;
+}
+
+.category-community:hover {
+	background-color: orange;
+}
+
+.category-archives:hover {
+	background-color: purple;
+}
+
+// =================================
+// NAVIGATION
+// ================================= 
+
+.nav-home {
+	border-top: 5px solid white;
+	transition-duration: 1s;
+	margin-left: 20px;
+}
+
+.nav-home:hover {
+	background-color: white;
+}
+
+.nav-news {
+	border-top: 5px solid blue;
+	transition-duration: 1s;
+}
+
+.nav-news:hover {
+	background-color: blue;
+}
+
+.nav-studentlife {
+	border-top: 5px solid red;
+	transition-duration: 1s;
+}
+
+.nav-studentlife:hover {
+	background-color: red;
+}
+
+.nav-opinion {
+	border-top: 5px solid lightgreen;
+	transition-duration: 1s;
+}
+
+.nav-opinion:hover {
+	background-color: lightgreen;
+}
+
+.nav-community {
+	border-top: 5px solid orange;
+	transition-duration: 1s;
+}
+
+.nav-community:hover {
+	background-color: orange;
+}
+
+.nav-archives {
+	border-top: 5px solid purple;
+	transition-duration: 1s;
+}
+
+.nav-archives:hover {
+	background-color: purple;
+}
+
+.nav li {
+	font-size: 85%;
+	letter-spacing: .05em;
+}
+
+.nav-top-border {
+	border-top: 4px solid #222222;
+}
+
+.collapse {
+	box-shadow: 2px 2px 5px #222222;
+}
+
+.logo {
+	font-size: 25px;
+	padding: 5px;
+	color: white;
+	margin-top: 15px;
+	margin-left: 10px;
+	margin-right: 5px;
+	font-family: 'Lusitana', serif;
+	cursor: pointer;
+}
+
+.leaf-logo {
+	height: 50px;
+	width: 50px;
+	margin-left: -15px;
+	margin-top: 1px;
 }
 
 // =================================
@@ -140,12 +276,17 @@
 // =================================
 
 .post .thumbnail {
-	width: 40%;
+	width: 60%;
 	display: inline-block;
 }
 
 .post-main .thumbnail {
 	width: 100%;
+	cursor: pointer;
+	border: 2px solid white;
+}
+
+.post-main .thumbnail:hover {
 	cursor: pointer;
 }
 
@@ -157,12 +298,57 @@
 // SHOW ARTICLES VIEW
 // =================================
 
-.show-title {
-	text-align: center;
+.post-show p {
+	white-space: pre-line;
 }
 
-.show-thumbnail {
+.post-show p .thumbnail {
 	width: 50%;
-	padding-right: 20px;
-	padding-top: 5px;
+}
+
+// =================================
+// CATEGORIES VIEW
+// =================================
+
+.filmstrip-wrapper {
+	float: right;
+}
+
+.filmstrip-content {
+	display: none;
+	width: 250px;
+}
+
+.filmstrip .thumbnail {
+	width: 240px;
+	max-height: 150px;
+	overflow: hidden;
+	border-radius: none;
+	margin-bottom: 10px;
+}
+
+.filmstrip:hover .filmstrip-content {
+	display: block;
+	z-index: 1000;
+	text-align: center;
+	position: absolute;
+	margin-top: -140px;
+	padding: 20px;
+	margin-left: -5px;
+	cursor: pointer;
+}
+
+.filmstrip:hover .thumbnail {
+	opacity: 0.4;
+	transition-duration: .5s;
+}
+
+.filmstrip-link:hover {
+	color: black;
+	text-decoration: none;
+}
+
+.filmstrip-link:visited {
+	color: black;
+	text-decoration: none;
 }

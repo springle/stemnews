@@ -1,21 +1,107 @@
-<p id="notice"><%= notice %></p>
+<!-- NAVIGATION -->
 
-<div class="show container">
-	<h1 class="show-title"><%= @post.title %></h1><br>
-	
-	
-	<img class="show-thumbnail" src="<%= @post.image %>" align="left"/>
-	
-	<div class="show-article">
-		<pre><%= @post.summary %><br>
-		     <%= @post.article %></pre>
-	</div>
-	
-	<p><strong>By:</strong> <%= @post.author %></p>
-	<p><strong>Sources:</strong> <%= @post.sources %></p>
-
-	<%= link_to 'Edit', edit_post_path(@post) %> |
-	<%= link_to 'Back', posts_path %>
+<div class="nav-header">
+  
 </div>
 
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li><div class="logo">STEM News</div></li>
+      <li class="active nav-home"><a href="<%= posts_path %>">HOME</a></li>
+	  <li class="nav-news"><a href="/news">NEWS</a></li>
+	  <li class="nav-studentlife"><a href="/studentlife">STUDENT LIFE</a></li>
+	  <li class="nav-opinion"><a href="/opinion">OPINION</a></li>
+	  <li class="nav-community"><a href="/community">COMMUNITY</a></li>
+      <li class="nav-archives"><a href="/archives">ARCHIVES</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a class="nav-top-border" href="/posts/new">SUBMIT POST</a></li>
+      <li class="nav-top-border dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">ACTIONS<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="/admin">Edit Articles</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+
+<!-- HEADER -->
+
+<div class="header-image visible-lg"></div>
+
+<div class="main-body">
+<div class="main-background">
+
+<div class="container">
+<div class="content-wrapper">
+
+<div class="media-fix hidden-lg"></div>
+
+<!-- ARTICLE -->
+
+<div class="row">
+  <div class="col-md-8">
+	<div class="post-show post-news">
+	  <p><a class="thumbnail"><img src="<%= @post.image %>"/></a></p>
+	  <p><strong><%= @post.title %></strong></p>
+	  <p>By: <%= @post.author %></p>
+	  <p><%= @post.summary %></p>
+	  <p><%= @post.article %></p>
+	</div>
+	<br>
+  </div>
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-3">
+    <p><strong>Related Articles</strong></p>
+	<% i = 0 %>
+	<% @posts.reverse.each do |post| %>
+	  <% if post.edited != 1 %>
+		<% next %>
+	  <% end %>
+	  <% if post.category != @post.category %>
+		<% next %>
+	  <% end %>
+	  <% if @post.title == post.title %>
+	    <% next %>
+	  <% end %>
+	  <% i += 1 %>
+	  <div class="filmstrip">
+		<a class="thumbnail"><%= image_tag post.image_url.to_s %></a>
+		<div class="filmstrip-content">
+		  <a class="filmstrip-link" href="<%= post.id %>">
+		  <p><strong><%= post.title %></strong></p>
+		  <p>By <%= post.author %></p>
+		  </a>
+		</div>
+	  </div>
+	  <% if i > 5 %>
+	  	<% break %>
+	  <% end %>
+  	<% end %>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+
 <br>
+
+
+</div>
+</div>
+</div>
+</div>

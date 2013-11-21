@@ -8,7 +8,7 @@ Stemnews::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'posts#index'
   
-  # Configure Admin Page
+  # Configure Other Pages
   get '/admin' => 'posts#admin'
   get '/news' => 'posts#news'
   get '/studentlife' => 'posts#studentlife'

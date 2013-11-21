@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
-http_basic_authenticate_with :name => "stem", :password => "news", except: :index
+http_basic_authenticate_with :name => "stem", :password => "news", only: :admin
 
   # GET /posts
   # GET /posts.json
@@ -36,6 +36,7 @@ http_basic_authenticate_with :name => "stem", :password => "news", except: :inde
   # GET /posts/1
   # GET /posts/1.json
   def show
+      @posts = Post.all
   end
 
   # GET /posts/new

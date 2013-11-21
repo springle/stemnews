@@ -1,5 +1,9 @@
 <!-- NAVIGATION -->
 
+<div class="nav-header">
+  
+</div>
+
 <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
@@ -9,33 +13,25 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#">STEM News</a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Archives</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">News</a></li>
-          <li><a href="#">Student Life</a></li>
-          <li><a href="#">Opinion</a></li>
-          <li><a href="#">Community</a></li>
-        </ul>
-      </li>
+      <li><div class="logo">STEM News</div></li>
+      <li class="nav-home"><a href="<%= posts_path %>">HOME</a></li>
+	  <li class="active nav-news"><a href="/news">NEWS</a></li>
+	  <li class="nav-studentlife"><a href="/studentlife">STUDENT LIFE</a></li>
+	  <li class="nav-opinion"><a href="/opinion">OPINION</a></li>
+	  <li class="nav-community"><a href="/community">COMMUNITY</a></li>
+      <li class="nav-archives"><a href="/archives">ARCHIVES</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Submit Post</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Actions<b class="caret"></b></a>
+      <li><a class="nav-top-border" href="/posts/new">SUBMIT POST</a></li>
+      <li class="nav-top-border dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">ACTIONS<b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Edit Articles</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li><a href="#">Separated link</a></li>
+          <li><a href="/admin">Edit Articles</a></li>
         </ul>
       </li>
     </ul>
@@ -44,12 +40,15 @@
 
 <!-- HEADER -->
 
-<img class="header-image" src="assets/stemnewsheader.jpg"/>
+<div class="header-image visible-lg"></div>
 
 <div class="main-body">
 <div class="main-background">
 
 <div class="container">
+<div class="content-wrapper">
+
+<div class="media-fix hidden-lg"></div>
 
 <div class="row">
   <div class="admin-articles">
@@ -64,8 +63,6 @@
 				<% i += 1 %>
 				<p><strong><%= post.title %></strong></p>
 				<p>By: <%= post.author%></p>
-				<p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
-				<p><%= post.summary%></p>
 				<%= link_to 'Edit', edit_post_path(post) %>
 				<%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
 				<br><br><br><br>
@@ -81,8 +78,6 @@
 			<%  if post.edited == 1 %>
 				<p><strong><%= post.title %></strong></p>
 				<p>By: <%= post.author%></p>
-				<p><a class="thumbnail"><%= image_tag post.image_url.to_s %></a></p>
-				<p><%= post.summary%></p>
 				<%= link_to 'Edit', edit_post_path(post) %>
 				<%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
 				<br><br><br><br>

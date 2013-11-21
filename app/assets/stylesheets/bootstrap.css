@@ -3335,7 +3335,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
   z-index: 1000;
   min-height: 50px;
   margin-bottom: 20px;
-  border: 1px solid transparent;
 }
 .navbar:before,
 .navbar:after {
@@ -3774,7 +3773,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
-  color: #ffffff;
+  color: #999999;
+  cursor: default;
   background-color: transparent;
 }
 .navbar-inverse .navbar-text {
@@ -4164,13 +4164,9 @@ a.list-group-item.active > .badge,
   }
 }
 .thumbnail {
-  padding: 4px;
   line-height: 1.428571429;
   background-color: #ffffff;
-  border: 1px solid #dddddd;
   border-radius: 4px;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
   display: inline-block;
   max-width: 100%;
   height: auto;
@@ -4180,10 +4176,6 @@ a.list-group-item.active > .badge,
   display: block;
   max-width: 100%;
   height: auto;
-}
-a.thumbnail:hover,
-a.thumbnail:focus {
-  border-color: #428bca;
 }
 .thumbnail > img {
   margin-left: auto;
