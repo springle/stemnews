@@ -39,6 +39,7 @@
     <%= f.label :image %><br>
     <%= f.file_field :image %>
   </div>
+  <%= f.hidden_field :edited, :value => 0 %>
   <div class="actions">
     <%= f.submit %>
   </div>

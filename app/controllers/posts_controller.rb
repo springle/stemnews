@@ -62,6 +62,7 @@ http_basic_authenticate_with :name => "stem", :password => "news", only: :admin
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /posts/1
