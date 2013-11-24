@@ -42,6 +42,11 @@
 	margin-top: 50px;
 }
 
+.row-divider {
+	width: 100%;
+	height: 20px;
+}
+
 // =================================
 // PAGE STYLE
 // ================================= 
@@ -152,6 +157,10 @@
 
 .category-archives:hover {
 	background-color: purple;
+}
+
+.thumbnail:hover {
+	background-color: none;
 }
 
 // =================================
